@@ -1,6 +1,8 @@
 # Loops, conditions and parsing
 
-![Error](https://holbertonintranet.s3.amazonaws.com/uploads/medias/2019/6/b07e3333b1edfb9beed5.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUWMNL5ANN%2F20200619%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200619T143242Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=8291d62a27d504165f8a3485ac264ea6813513341367c752c0d8e63f3991703b)
+## Devops
+DevOps is the combination of cultural philosophies, practices, and tools that increases an organization's ability to deliver applications and services at high velocity: evolving and improving products at a faster pace than organizations using traditional software development and infrastructure management processes.
+![Error](https://miro.medium.com/max/3964/1*AwvDJDfErlD34ox2QpwGoA.png)
 
 * [Description]
 * [SSH]
