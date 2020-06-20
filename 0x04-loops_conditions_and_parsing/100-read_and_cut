@@ -5,9 +5,8 @@
 #    user id
 #    Home directory path for the user
 
-
 dir="/etc/passwd"
-while IFS=: read -r username userid homedir
+while IFS=: read -r username userid homedir;
 do
     echo "$username $userid $homedir" | cut -d: -f 1,3,6
 done < $dir
