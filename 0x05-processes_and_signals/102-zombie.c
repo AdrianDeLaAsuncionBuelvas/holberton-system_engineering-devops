@@ -28,12 +28,11 @@ int main(void)
 	int p = 5;
 	pid_t child_pid;
 
-	while (--p)
+	while (p--)
 	{
 		child_pid = fork();
 		if (child_pid > 0)
 			printf("Zombie process created, PID: %i\n", child_pid);
-
 		else
 			exit(0);
 	}
