@@ -1,5 +1,5 @@
 # Web infrastructure design
-![Error](https://imgur.com/fEYesbF)
+![Error](https://miro.medium.com/max/854/0*hnDtYOGGCSqbCOn_.jpg)
 
 
 ## Server
@@ -11,5 +11,5 @@ In computing, a server is a piece of computer hardware or software that provides
 LAMP is a very common example of a web service stack, named as an acronym of the names of its original four open-source components: the Linux operating system, the Apache HTTP Server, the MySQL relational database management system, and the PHP programming language
 
 ## Application Server
-![Error](https://imgur.com/zCsMDJJ)
+![Error](https://miro.medium.com/max/2488/1*RcrZISCcagyo232oty8QHA.png)
 An application server is a server that hosts applications. Application server frameworks are software frameworks for building application servers. An application server framework provides both facilities to create web applications and a server environment to run them
