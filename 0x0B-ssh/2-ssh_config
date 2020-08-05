@@ -1,0 +1,6 @@
+# Share your SSH client configuration in your answer file.
+Host 1550-web-01
+User Ubuntu
+HostName 34.75.68.113
+IdentityFile ~/.ssh/holberton
+PasswordAuthentication no
