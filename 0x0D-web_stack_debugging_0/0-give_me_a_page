@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-# get Apache to run on the container
+# get Apache to run on the contain
 
-systemctl start apache2.service
+service apache2 start
