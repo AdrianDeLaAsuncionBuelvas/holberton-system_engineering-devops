@@ -4,8 +4,8 @@
 apt-get -y update
 apt-get -y install software-properties-common
 add-apt-repository ppa:vbernat/haproxy-1.8
-apt-get update
 apt-get install haproxy=1.8.\*
+echo "ENABLED=1" >> /etc/default/haproxy
 cp /etc/haproxy/haproxy.cfg .
 cat >> /etc/haproxy/haproxy.cfg << EOF
 frontend http_front
