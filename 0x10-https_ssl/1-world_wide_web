@@ -23,4 +23,4 @@ function sub_info {
 	 fi
 }
 
-sub_info $1 $2
+sub_info "$1" "$2"
