@@ -14,7 +14,7 @@ function sub_info {
 	    echo "The subdomain www is a $wwwrec record and points to $wwwip"
 	    echo "The subdomain lb-01 is a $lb01rec record and points to $lb01ip"
 	    echo "The subdomain web-01 is a $web01rec record and points to $web01ip"
-	    echo "The subdomain web-02 is a $web02rec  record and ponts to $web02ip"
+	    echo "The subdomain web-02 is a $web02rec  record and points to $web02ip"
 	 elif [[ "$2" ]] ; then
 	     sub="$(dig "$2.$1" | grep -A1 'ANSWER SECTION:' | awk '{print $1}' | tr -d '\n;' | cut -d '.' -f1)"
 	     rec="$(dig "$2.$1" | grep -A1 'ANSWER SECTION:' | awk '{print $4}' | tr -d '\n')"
