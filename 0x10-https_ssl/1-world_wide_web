@@ -1,26 +1,10 @@
 #!/usr/bin/env bash
 # script that will display information about subdomains.
 
-function sub_info {
-	 if [ -z "$2" ] ; then
-	    wwwip="$(dig "www.$1" | grep -A1 'ANSWER SECTION:' | awk '{print $5}' | tr -d '\n')"
-	    lb01ip="$(dig "lb-01.$1" | grep -A1 'ANSWER SECTION:' | awk '{print $5}' | tr -d '\n')"
-	    web01ip="$(dig "web-01.$1" | grep -A1 'ANSWER SECTION:' | awk '{print $5}' | tr -d '\n')"
-	    web02ip="$(dig "web-02.$1" | grep -A1 'ANSWER SECTION:' | awk '{print $5}' | tr -d '\n')"
-	    wwwrec="$(dig "www.$1" | grep -A1 'ANSWER SECTION:' | awk '{print $4}' | tr -d '\n')"
-	    lb01rec="$(dig "lb-01.$1" | grep -A1 'ANSWER SECTION:' | awk '{print $4}' | tr -d '\n')"
-	    web01rec="$(dig "web-01.$1" | grep -A1 'ANSWER SECTION:' | awk '{print $4}' | tr -d '\n')"
-	    web02rec="$(dig "web-02.$1" | grep -A1 'ANSWER SECTION:' | awk '{print $4}' | tr -d '\n')"
-	    echo "The subdomain www is a $wwwrec record and points to $wwwip"
-	    echo "The subdomain lb-01 is a $lb01rec record and points to $lb01ip"
-	    echo "The subdomain web-01 is a $web01rec record and points to $web01ip"
-	    echo "The subdomain web-02 is a $web02rec  record and points to $web02ip"
-	 elif [ $# -eq 2 ] ; then
-	    sub="$2.$1"
-	    rec="$(dig "$sub" | grep -A1 'ANSWER SECTION:' | tail -1 | awk '{print $4}')"
-	    ip="$(dig "$sub" | grep -A1 'ANSWER SECTION:' | tail -1 | awk '{print $5}')"
-	    echo "The subdomain $2 is a $rec record and points to $ip"
-	 fi
-}
+if [ $# -eq 1 ]; then
+        dom="www.$1 lb-01.$1 web-01.$1 web-02.$1"
+else
+        dom="$2.$1"
+fi
 
-sub_info $1 $2
+dig $dom | awk '/ANSWER SECTION:/{getline; split($1,b,"."); print "The subdomain", b[1], "is a", $4, "record and points to", $5}'
