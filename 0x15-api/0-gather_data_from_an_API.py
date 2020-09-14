@@ -12,22 +12,19 @@ if __name__ == '__main__':
     url = 'https://jsonplaceholder.typicode.com/users/{}'.format(_id)
 
     response = requests.get(url)
-    jreq = response.json()
-    name = jreq['name']
-    url = 'https://jsonplaceholder.typicode.com/todos'
-    response = requests.get(url)
-    jreq = response.json()
-    tasks = []
-    complete_tasks = []
-    for i in jreq:
-        if i['userId'] == int(_id):
-            tasks.append(i)
-    total_tasks = len(tasks)
-    for i in tasks:
-        if i['completed'] is True:
-            complete_tasks.append(i)
+    name = response.json().get('name')
+    todos = requests.get('https://jsonplaceholder.typicode.com/todos')
+    total_tasks = 0
+    completed = 0
+
+    for task in todos.json():
+        if task.get('userId') == int(_id):
+            total_tasks += 1
+            if task.get('completed'):
+                completed += 1
     print("Employee {} is done with tasks({}/{}):".format(name,
-                                                          len(complete_tasks),
+                                                          completed,
                                                           total_tasks))
-    for i in complete_tasks:
-        print("\t {}".format(i['title']))
+    print('\n'.join(["\t " + task.get('title') for task in todos.json()
+                     if task.get('userId') == int(_id) and
+                     task.get('completed')]))
