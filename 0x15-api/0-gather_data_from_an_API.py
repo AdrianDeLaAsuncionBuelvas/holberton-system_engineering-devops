@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Module that calls RESTful API"""
+"""REST API returns information about his/her TODO list progress"""
 
 import requests
 import json
@@ -7,7 +7,6 @@ from sys import argv
 
 
 if __name__ == '__main__':
-    """REST API returns information about his/her TODO list progress"""
     _id = argv[1]
     url = 'https://jsonplaceholder.typicode.com/users/{}'.format(_id)
 
