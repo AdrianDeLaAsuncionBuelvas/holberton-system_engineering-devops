@@ -8,8 +8,9 @@ from sys import argv
 
 if __name__ == '__main__':
     _id = argv[1]
-    users = 'https://jsonplaceholder.typicode.com/users/{}'.format(_id)
-    todo = 'https://jsonplaceholder.typicode.com/todos?userId={}'.format(_id)
+    url_users = 'https://jsonplaceholder.typicode.com/users/{}'.format(_id)
+    url_todo = 'https://jsonplaceholder.typicode.com/todos?userId={}'.format(
+        _id)
 
     req_user = requests.get(users).json()
     req_todo = requests.get(todo).json()
