@@ -15,10 +15,8 @@ if __name__ == '__main__':
     req_todo = requests.get(todo).json()
 
     with open('{}.csv'.format(_id), mode='w') as csv_file:
-        writer = csv.writer(csv_file, delimiter=',',
+        csv_writer = csv.writer(csv_file, delimiter=',',
                                 quoting=csv.QUOTE_ALL)
         for task in req_todo:
-            writer.writerow([task['userId'],
-                            req_user['name'],
-                            task['completed'],
-                             task['title']])
+            csv_writer.writerow([task['userId'], req_user['username'],
+                                 task['completed'], task['title']])
